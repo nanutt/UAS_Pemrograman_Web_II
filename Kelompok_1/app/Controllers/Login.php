@@ -1,35 +1,33 @@
 <?php
 namespace App\Controllers;
 use CodeIgniter\Controller;
-use App\Models\ModelLogin;
+use App\Models\AkunModel;
 class Login extends Controller
 {
     public function index()
     {
         helper(['form']);
-        echo view('Login');
+        echo view('loginft');
     }
     public function auth()
     {
         $session = session();
-        $model = new ModelLogin();
-        $username = $this->request->getPost('username');
-        $email = $this->request->getPost('email');
+        $model = new AkunModel();
+        $nama = $this->request->getPost('nama');
         $password = $this->request->getPost('password');
-        $data = $model->get_data($username, $email, $password);
-        if (empty($username) || empty($email) || empty($password)) {
+        $data = $model->get_data($nama, $password);
+        if (empty($nama) || empty($password)) {
             $session->setFlashdata('msg', 'Harap lengkapi semua kolom');
             return redirect()->to('/login');
         }
         if ($data) {
             $ses_data = [
-                'username' => $data['username'],
-                'email' => $data['email'],
+                'nama' => $data['nama'],
                 'password' => $data['password'],
                 'logged_in' => TRUE
             ];
             $session->set($ses_data);
-            return redirect()->to('/buku/index');
+            return view('dashboard');
         } else {
             $session->setFlashdata('msg', 'Username, Email, atau Password Salah');
             return redirect()->to('/login');
@@ -44,3 +42,7 @@ class Login extends Controller
     }
 }
 ?>
+
+
+
+

@@ -27,6 +27,10 @@ class TanyaFT extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '50',
             ],
+            'no_handphone' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '20',
+            ],
             'pertanyaan' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',

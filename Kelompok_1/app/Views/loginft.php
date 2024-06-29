@@ -2,11 +2,12 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link href="<?= base_url('css/style.css') ?>" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      
 </head>
 <div class="div">
   <div class="div-2">
@@ -26,7 +27,7 @@
           <main class="main-content">
             <h2 class="login-title">Login ke Akun Anda</h2>
             <p class="login-subtitle">Masukkan Username dan password untuk login!</p>
-            <form>
+            <form action="dashboard" method="post">
               <label for="username" class="input-label">
                 <span class="label-text">Username</span>
                 <span class="required">*</span>
@@ -48,7 +49,7 @@
             <div class="signup-section">
               <div class="signup-text">
                 <p class="signup-question">Belum Mempunyai Akun?</p>
-                <a href="#" class="signup-link">Daftar</a>
+                <a href="<?= base_url('register') ?>" class="signup-link">Daftar</a>
               </div>
             </div>
           </main>
