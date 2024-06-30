@@ -95,7 +95,7 @@
                         alt="" class="menu-icon" />
                     <span class="menu-text">Profile</span>
                 </a>
-                <a href="#" class="menu-item">
+                <a href="<?= base_url('login') ?>" class="menu-item">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9cb424fbc848abd359c1a5e087aa8b264a3f19718a8ba4e083fb1568891b35df?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">Logout</span>
