@@ -21,4 +21,7 @@ $routes->group('layananft', ['filter' => 'auth'], function ($routes) {
     $routes->get('(:segment)/preview', 'Views::preview/$1');
     $routes->post('datapengajuan/save', 'Views::save');
 });
+
+
+
 ?>

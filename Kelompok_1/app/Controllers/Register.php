@@ -14,7 +14,7 @@ class Register extends Controller
     }
  
     public function save()
-    {        helper(['form']);       
+    {        helper(['form']);
          
         $model = new AkunModel();
         $data = [
@@ -36,5 +36,4 @@ class Register extends Controller
     }
  
 }
-
 ?>

@@ -104,7 +104,7 @@
         </aside>
         <main>
             <div class="content">
-                <a href="<?= base_url('layananft/response') ?>" class="back-button">
+                <a href="<?= base_url('response') ?>" class="back-button">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56b0e97e03d1a545d2a516906aa5a04969cc559ff326afef2943428b84cd6f2d?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="Back Arrow" class="menu-icon">
                     <span>Kembali</span>
