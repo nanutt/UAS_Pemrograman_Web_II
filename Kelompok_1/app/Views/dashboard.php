@@ -4,6 +4,10 @@
 <link href="<?= base_url('css/stylefix.css') ?>" rel="stylesheet">
 </head>
 
+
+
+
+
 <body>
     <header class="header">
         <div class="logo-container">
