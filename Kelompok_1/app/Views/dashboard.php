@@ -115,7 +115,7 @@
                 <div class="welcome-banner">
                     <div class="welcome-content">
                         <div class="welcome-text">
-                            <h2 class="welcome-heading">Selamat Datang Maulana!</h2>
+                            <h2 class="welcome-heading">Selamat Datang  <?= session()->get('nama') ?>!</h2>
                             <p class="welcome-message">Di website ini kamu dapat mengajukan layanan dan mengecek status
                                 pengajuannya</p>
                         </div>

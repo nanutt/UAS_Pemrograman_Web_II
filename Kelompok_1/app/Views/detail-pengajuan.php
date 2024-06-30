@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <link href="<?= base_url('css/stylefix.css') ?>" rel="stylesheet">
 </head>
 
@@ -35,7 +36,7 @@
         <aside>
             <nav class="sidebar-content">
                 <h2 class="menu-header">Menu</h2>
-                <a href="<?= base_url('dashboard') ?>" class="menu-item menu-item-active">
+                <a href="#" class="menu-item menu-item-active">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/23004516897fd89185417a24df5acd2efde7ada021f51aab905ec7013a0973b6?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">Dashboard</span>
@@ -91,43 +92,69 @@
         </aside>
         <main>
             <div class="content">
-                <div class="dashboard-header">
-                    <div class="dashboard-icon">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/38d7d61c4c53b54ffd62628902a19dd42f50dd17f912b65bc9414110d133452a?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
-                            alt="Dashboard Icon" class="dashboard-icon-img" />
-                    </div>
-                    <div class="dashboard-title">
-                        <h1 class="dashboard-heading">Layanan e-Respons</h1>
-                        <p class="dashboard-subtitle">Inovasi Layanan Informasi dan Pengaduan FT ULM</p>
-                    </div>
+                <a href="<?= base_url('tanyaft') ?>" class="back-button">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56b0e97e03d1a545d2a516906aa5a04969cc559ff326afef2943428b84cd6f2d?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                        alt="Back Arrow" class="menu-icon">
+                    <span>Kembali</span>
+                </a>
+                <div class="divider"></div>
+                <h1 class="section-title-tengah">Detail Pengajuan Surat Rekomendasi Mahasiswa</h1>
+                <?php
+                $formattedDate = date('d F Y', strtotime($TanyaFT['tanggal_pengajuan']));
+                ?>
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">ID Pengajuan</h2>
+                        <p class="application-date-value"> <?= esc($TanyaFT['id_tanyaft']) ?></p>
+                    </section>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Status Pengajuan</h2>
+                        <section class="approval-container">
+                            <p class="approval-status-detail">Disetujui</p>
+                        </section>
+                    </section>
                 </div>
-                <div class="services-grid">
-                    <div class="services-row-response">
-                        <article class="service-card">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ddfd254d57eb30b3ad686b9fcab596504a89ca588c31efa426f18c3483c8181?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
-                                alt="Surat Keterangan Lulus" class="service-image" />
-                            <div class="service-content">
-                                <h4 class="service-title">Lapor FT</h4>
-                                <p class="service-description">Layanan ini digunakan untuk menyampaikan keluhan atau
-                                    saran di lingkungan Fakultas Teknik Universitas Lambung Mangkurat.</p>
-                            </div>
-                        </article>
-                        <article class="service-card">
-                            <a href="<?= base_url('tanyaft') ?>">
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Tanggal Pengajuan</h2>
+                        <p class="application-date-value"><?= $formattedDate ?></p>
 
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7cdba200b51831ae0de8af7a66abcdff56dfc8ea218296257d55c4a0d1308692?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
-                                    alt="Tanya FT Service" class="service-image">
-                                <div class="service-content">
-                                    <h4 class="service-title">Tanya FT</h4>
-                                    <p class="service-description">Layanan ini disediakan untuk menyampaikan permohonana
-                                        informasi publik terkait Fakultas Teknik ULM</p>
-                                </div>
-                            </a>
-                        </article>
-                    </div>
+                    </section>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Nama Lengkap</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['nama_lengkap']) ?></p>
+                    </section>
                 </div>
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">NIM</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['nim']) ?></p>
+                    </section>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Program Studi</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['prodi']) ?></p>
+                    </section>
+                </div>
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">No. Handphone</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['no_handphone']) ?></p>
+                    </section>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">File Pendukung</h2>
+                        <p class="application-date-value"> <a
+                                href="<?= base_url('upload/image/' . esc($TanyaFT['file_berkas'])) ?>" target="_blank">
+                                Lihat Gambar
+                            </a></p>
+                    </section>
+                </div>
+                <form class="name-input-container">
+                    <label class="name-label-wrapper" for="fullName">
+                        <span class="name-label">Pertanyaan</span>
+                    </label>
+                    <p class="application-date-value"><?= esc($TanyaFT['pertanyaan']) ?></p>
+                </form>
             </div>
-
         </main>
     </div>
 </body>
