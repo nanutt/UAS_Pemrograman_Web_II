@@ -194,7 +194,7 @@
                                                 </button>
                                             </a>
 
-                                            <a href="<?= base_url($row['id_tanyaft'] . '/tanggapan') ?>">
+                                            <a href="<?= base_url('layananft/' .$row['id_tanyaft'] . '/tanggapan') ?>">
 
 
                                                 <button class="action-button action-button-download">
