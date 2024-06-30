@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+
 use CodeIgniter\Controller;
 use App\Models\AkunModel;
 use App\Models\TanyaFTModel;
@@ -11,15 +12,18 @@ class views extends Controller
         echo view('dashboard');
     }
 
-    public function preview($id)
+    public function preview($id_tanyaft)
     {
-        $akun = new AkunModel();
-        $data['akun'] = $akun->where('id', $id)->first();
+        $TanyaFT = new TanyaFTModel();
+        $data['TanyaFT'] = $TanyaFT->where('id_tanyaft', $id_tanyaft)->first();
+        echo view('detail-pengajuan', $data);
+    }
 
-        if (!$data['akun']) {
-            throw PageNotFoundException::forPageNotFound();
-        }
-        echo view('dashboard', $data);
+    public function tanggapan($id_tanyaft)
+    {
+        $TanyaFT = new TanyaFTModel();
+        $data['TanyaFT'] = $TanyaFT->where('id_tanyaft', $id_tanyaft)->first();
+        echo view('tanggapan', $data);
     }
     public function e_response()
     {
@@ -31,47 +35,41 @@ class views extends Controller
         $tanyaFModel = new TanyaFTModel(); // Assuming TanyaF is your model for submissions
         $data['pengajuan'] = $tanyaFModel->findAll(); // Fetch all submissions
         echo view('tanya-ft', $data); // Pass the data to the view 'tanya-ft.php'
-        echo view('tanya-ft');
     }
-    public function data_pengajuan()
-    {
-        $tanyaFModel = new TanyaFTModel(); // Assuming TanyaF is your model for submissions
-        $data['pengajuan'] = $tanyaFModel->findAll(); // Fetch all submissions
-        echo view('tanya-ft', $data); // Pass the data to the view 'tanya-ft.php'
-    }
+
 
     public function save()
     {
         $session = session();
         $dataModel = new TanyaFTModel();
-    
+
         $rules = [
             'nama_lengkap' => 'required|string',
-            'nim'          => 'required|string',
-            'prodi'        => 'required|string',
-            'no_handphone'        => 'required|string',
-            'pertanyaan'   => 'required|string',
-            'file_berkas'  => 'uploaded[file_berkas]|max_size[file_berkas,2048]|ext_in[file_berkas,pdf,doc,png,jpeg]'
+            'nim' => 'required|string',
+            'prodi' => 'required|string',
+            'no_handphone' => 'required|string',
+            'pertanyaan' => 'required|string',
+            'file_berkas' => 'uploaded[file_berkas]|max_size[file_berkas,2048]|ext_in[file_berkas,pdf,doc,png,jpeg]'
         ];
-    
+
         if (!$this->validate($rules)) {
             session()->setFlashdata('errors', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
-    
+
         $file = $this->request->getFile('file_berkas');
         if ($file->isValid() && !$file->hasMoved()) {
             $fileName = $file->getRandomName();
-            $file->move(WRITEPATH . 'uploads', $fileName);
+            $file->move('./upload/image');
         }
-    
+
         $dataModel->save([
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
-            'nim'          => $this->request->getPost('nim'),
-            'prodi'        => $this->request->getPost('prodi'),
-            'no_handphone'        => $this->request->getPost('no_handphone'),
-            'pertanyaan'   => $this->request->getPost('pertanyaan'),
-            'file_berkas'  => $fileName
+            'nim' => $this->request->getPost('nim'),
+            'prodi' => $this->request->getPost('prodi'),
+            'no_handphone' => $this->request->getPost('no_handphone'),
+            'pertanyaan' => $this->request->getPost('pertanyaan'),
+            'file_berkas' => $fileName
         ]);
         $session->setFlashdata('msg', 'Data Berhasil Ditambahkan');
 
@@ -81,13 +79,10 @@ class views extends Controller
     {
         return view('tanya-ft');
     }
-    public function form(){
+    public function form()
+    {
         return view('form_pengajuan');
 
     }
 }
 ?>
-
-
-
-

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -12,33 +11,30 @@ class Login extends Controller
         helper(['form']);
         echo view('loginft');
     }
-
     public function auth()
     {
         $session = session();
         $model = new AkunModel();
         $nama = $this->request->getPost('nama');
         $password = $this->request->getPost('password');
-        $data = $model->get_data($nama);
-
-        if ($data) {
-            if (password_verify($password, $data['password'])) {
-                $ses_data = [
-                    'id_akun'   => $data['id_akun'],
-                    'nama'      => $data['nama'],
-                    'email'     => $data['email'],
-                    'logged_in' => true
-                ];
-                $session->set($ses_data);
-                return view('dashboard');
-            } else {
-                $session->setFlashdata('msg', 'Password salah');
-                return redirect()->to('/login');
-            }
-        } else {
-            $session->setFlashdata('msg', 'Nama tidak ditemukan');
+        $data = $model->get_data($nama, $password);
+        if (empty($nama) || empty($password)) {
+            $session->setFlashdata('msg', 'Masukkan Username Terlebih Dahulu!');
+            $session->setFlashdata('msg', 'Masukkan Password Terlebih Dahulu!');
             return redirect()->to('/login');
         }
+        if ($data) {
+            $ses_data = [
+                'nama' => $data['nama'],
+                'password' => $data['password'],
+                'logged_in' => TRUE
+            ];
+            $session->set($ses_data);
+            return redirect()->to('layananft/dashboard');
+        } else {
+            return redirect()->to('/login');
+        }
+
     }
 
     public function logout()
@@ -48,3 +44,4 @@ class Login extends Controller
         return redirect()->to('/login');
     }
 }
+?>

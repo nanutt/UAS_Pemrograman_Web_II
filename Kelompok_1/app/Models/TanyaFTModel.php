@@ -15,3 +15,4 @@ class TanyaFTModel extends Model
 
     ];
 }
+?>
