@@ -47,7 +47,7 @@
                         alt="" class="menu-icon" />
                     <span class="menu-text">e-Command Center</span>
                 </a>
-                <a href="<?= base_url('response') ?>" class="menu-item">
+                <a href="<?= base_url('layananft/response') ?>" class="menu-item">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/318e321b6fd55843b33e1681cc0913c190905de5a4bdb7991de9c9cf1ef7fd3c?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">e-Response</span>

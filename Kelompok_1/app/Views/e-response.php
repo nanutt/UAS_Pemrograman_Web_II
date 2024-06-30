@@ -35,7 +35,7 @@
         <aside>
             <nav class="sidebar-content">
                 <h2 class="menu-header">Menu</h2>
-                <a href="<?= base_url('dashboard') ?>" class="menu-item menu-item-active">
+                <a href="<?= base_url('layananft/dashboard') ?>" class="menu-item menu-item-active">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/23004516897fd89185417a24df5acd2efde7ada021f51aab905ec7013a0973b6?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">Dashboard</span>
@@ -113,7 +113,7 @@
                             </div>
                         </article>
                         <article class="service-card">
-                            <a href="<?= base_url('tanyaft') ?>">
+                            <a href="<?= base_url('layananft/tanyaft') ?>">
 
                                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7cdba200b51831ae0de8af7a66abcdff56dfc8ea218296257d55c4a0d1308692?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                                     alt="Tanya FT Service" class="service-image">

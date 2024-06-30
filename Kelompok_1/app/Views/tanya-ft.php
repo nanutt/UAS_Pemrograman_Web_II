@@ -10,7 +10,7 @@
                     statusElement.textContent = 'Disetujui';
                     statusElement.classList.remove('status-diproses');
                     statusElement.classList.add('status-disetujui');
-                }, 5000); // 5000 ms = 5 detik
+                }, 1000); 
             });
         });
     </script>
@@ -48,7 +48,7 @@
         <aside>
             <nav class="sidebar-content">
                 <h2 class="menu-header">Menu</h2>
-                <a href="#" class="menu-item menu-item-active">
+                <a href="<?= base_url('layananft/dashboard') ?>" class="menu-item menu-item-active">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/23004516897fd89185417a24df5acd2efde7ada021f51aab905ec7013a0973b6?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">Dashboard</span>
@@ -104,7 +104,7 @@
         </aside>
         <main>
             <div class="content">
-                <a href="<?= base_url('response') ?>" class="back-button">
+                <a href="<?= base_url('layananft/response') ?>" class="back-button">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56b0e97e03d1a545d2a516906aa5a04969cc559ff326afef2943428b84cd6f2d?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="Back Arrow" class="menu-icon">
                     <span>Kembali</span>
@@ -134,7 +134,7 @@
                     2. Admin Akademik akan menanggapi pertanyaan tersebut<br>
                     3. Tanggapan dapat dilihat melalui tabel pengajuan
                 </p>
-                <a href="<?= base_url('formpengajuan') ?>">
+                <a href="<?= base_url('layananft/formpengajuan') ?>">
                     <div class="table-header-pengajuan">
                         <h2 class="section-title-pengajuan">Tabel Pengajuan</h2>
                         <button class="add-button">
@@ -184,7 +184,7 @@
                                     </td>
                                     <td>
                                         <nav class="action-bar">
-                                            <a href="<?= base_url($row['id_tanyaft'] . '/preview') ?>">
+                                            <a href="<?= base_url('layananft/'. $row['id_tanyaft'] . '/preview') ?>">
 
                                                 <button class="action-button action-button-detail">
                                                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/be3c7dad9e7898184e35146d72d1889895012cfdbf6b7abe40318e40611756cd?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"

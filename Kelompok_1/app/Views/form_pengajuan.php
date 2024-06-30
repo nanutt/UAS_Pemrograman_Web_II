@@ -36,7 +36,7 @@
         <aside>
             <nav class="sidebar-content">
                 <h2 class="menu-header">Menu</h2>
-                <a href="#" class="menu-item menu-item-active">
+                <a href="<?= base_url('layananft/dashboard') ?>" class="menu-item menu-item-active">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/23004516897fd89185417a24df5acd2efde7ada021f51aab905ec7013a0973b6?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">Dashboard</span>
@@ -92,14 +92,14 @@
         </aside>
         <main>
             <div class="content">
-                <a href="<?= base_url('tanyaft') ?>" class="back-button">
+                <a href="<?= base_url('layananft/tanyaft') ?>" class="back-button">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56b0e97e03d1a545d2a516906aa5a04969cc559ff326afef2943428b84cd6f2d?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="Back Arrow" class="menu-icon">
                     <span>Kembali</span>
                 </a>
                 <div class="divider"></div>
                 <h1 class="section-title-tengah">Tambah Pengajuan Tanya FT</h1>
-                <form action="<?= site_url('datapengajuan/save') ?>" method="post" enctype="multipart/form-data"
+                <form action="<?= site_url('layananft/datapengajuan/save') ?>" method="post" enctype="multipart/form-data"
                     onsubmit="return confirmSubmit()">
                     <div class="name-input-container">
                         <label class="name-label-wrapper" for="nama_lengkap">
@@ -156,9 +156,9 @@
                 <script>
                     function confirmSubmit() {
                         if (confirm("Anda yakin ingin mengirimkan data?")) {
-                            return true; // Lanjutkan pengiriman form
+                            return true; 
                         } else {
-                            return false; // Batalkan pengiriman form
+                            return false; 
                         }
                     }
                 </script>
