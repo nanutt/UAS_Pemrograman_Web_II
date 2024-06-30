@@ -11,7 +11,7 @@
 <div class="div">
   <div class="div-2">
     <div class="column">
-      <img loading="lazy" srcset="image.png" class="img" />
+      <img loading="lazy" srcset="<?= base_url('image/image.png')?>"  class="img" />
     </div>
     <div class="column-2">
       <div class="div-3">
@@ -62,7 +62,7 @@
                 <span class="required">*</span>
               </div>
               <input type="password" id="confpassword" class="form-input" placeholder="Masukkan Email" name="confpassword" required />
-              <button type="submit" class="submit-button">Daftar</button>
+              <button type="submit" class="login-button">Daftar</button>
             </form>
         
             <div class="signup-section">

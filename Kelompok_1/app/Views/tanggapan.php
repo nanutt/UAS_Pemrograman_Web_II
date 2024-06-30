@@ -92,76 +92,35 @@
         </aside>
         <main>
             <div class="content">
-                <a href="<?= base_url('tanyaft') ?>" class="back-button">
+                <a href="<?= base_url('tanyaft')?>" class="back-button">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56b0e97e03d1a545d2a516906aa5a04969cc559ff326afef2943428b84cd6f2d?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="Back Arrow" class="menu-icon">
                     <span>Kembali</span>
                 </a>
                 <div class="divider"></div>
-                <h1 class="section-title-tengah">Tambah Pengajuan Tanya FT</h1>
-                <form action="<?= site_url('datapengajuan/save') ?>" method="post" enctype="multipart/form-data"
-                    onsubmit="return confirmSubmit()">
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="nama_lengkap">
-                            <span class="name-label">Nama Lengkap</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="nama_lengkap" name="nama_lengkap" class="name-input"
-                            aria-required="true">
+                <h1 class="section-title-tengah">Tanggapan Tanya FT</h1>
+                <section class="question-container">
+                    <h2 class="question-label">Pertanyaan</h2>
+                    <span class="question-colon">:</span>
+                    <div class="question-content">
+                        <p class="question-text">
+                            Apa saja keuntungan layanan FT ULM yang baru dibuat ini?
+                        </p>
+                        <button class="check-file-button" tabindex="0">
+                            Cek File
+                        </button>
                     </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="nim">
-                            <span class="name-label">NIM</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="nim" name="nim" class="name-input" aria-required="true">
+                </section>
+                <section class="question-container">
+                    <h2 class="question-label">Jawaban</h2>
+                    <span class="question-colon">:</span>
+                    <div class="question-content">
+                        <p class="question-text">
+                        Website layanan baru FT ULM dirancang untuk memberikan akses yang mudah dan cepat bagi mahasiswa, dosen, dan staf untuk mengakses berbagai layanan akademik dan administratif. Dengan antarmuka yang responsif dan ramah pengguna, pengguna dapat dengan mudah mengajukan permohonan, mengakses informasi akademik, memantau status pengajuan, dan berinteraksi dengan berbagai fitur lainnya secara efisien.
+                        </p>
                     </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="prodi">
-                            <span class="name-label">Program Studi</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="prodi" name="prodi" class="name-input" aria-required="true">
-                    </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="no_handphone">
-                            <span class="name-label">No. Handphone</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="no_handphone" name="no_handphone" class="name-input"
-                            aria-required="true">
-                    </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="pertanyaan">
-                            <span class="name-label">Pertanyaan</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="pertanyaan" name="pertanyaan" class="name-input" aria-required="true">
-                    </div>
-                    <section class="file-upload-container">
-                        <h2 class="file-upload-title">Berkas Pendukung</h2>
-                        <div class="file-upload-area">
-                            <label for="file-upload" class="visually-hidden">Choose file</label>
-                            <input type="file" id="file-upload" aria-label="File upload" name="file_berkas">
-                            <p class="file-upload-text">Drag and drop a file here or click</p>
-                        </div>
-                        <p class="file-upload-info">* Upload file dengan format jpg, png, jpeg maksimal 2 MB</p>
-                    </section>
-                    <section class="buttons-container">
-                        <button type="button" class="button-cancel" tabindex="0">Batal</button>
-                        <button type="submit" class="button-submit" tabindex="0">Kirim</button>
-                    </section>
-                </form>
+                </section>
 
-                <script>
-                    function confirmSubmit() {
-                        if (confirm("Anda yakin ingin mengirimkan data?")) {
-                            return true; // Lanjutkan pengiriman form
-                        } else {
-                            return false; // Batalkan pengiriman form
-                        }
-                    }
-                </script>
 
 
             </div>

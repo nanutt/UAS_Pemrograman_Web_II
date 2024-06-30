@@ -98,74 +98,63 @@
                     <span>Kembali</span>
                 </a>
                 <div class="divider"></div>
-                <h1 class="section-title-tengah">Tambah Pengajuan Tanya FT</h1>
-                <form action="<?= site_url('datapengajuan/save') ?>" method="post" enctype="multipart/form-data"
-                    onsubmit="return confirmSubmit()">
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="nama_lengkap">
-                            <span class="name-label">Nama Lengkap</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="nama_lengkap" name="nama_lengkap" class="name-input"
-                            aria-required="true">
-                    </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="nim">
-                            <span class="name-label">NIM</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="nim" name="nim" class="name-input" aria-required="true">
-                    </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="prodi">
-                            <span class="name-label">Program Studi</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="prodi" name="prodi" class="name-input" aria-required="true">
-                    </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="no_handphone">
-                            <span class="name-label">No. Handphone</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="no_handphone" name="no_handphone" class="name-input"
-                            aria-required="true">
-                    </div>
-                    <div class="name-input-container">
-                        <label class="name-label-wrapper" for="pertanyaan">
-                            <span class="name-label">Pertanyaan</span>
-                            <span class="required-indicator" aria-hidden="true">*</span>
-                        </label>
-                        <input type="text" id="pertanyaan" name="pertanyaan" class="name-input" aria-required="true">
-                    </div>
-                    <section class="file-upload-container">
-                        <h2 class="file-upload-title">Berkas Pendukung</h2>
-                        <div class="file-upload-area">
-                            <label for="file-upload" class="visually-hidden">Choose file</label>
-                            <input type="file" id="file-upload" aria-label="File upload" name="file_berkas">
-                            <p class="file-upload-text">Drag and drop a file here or click</p>
-                        </div>
-                        <p class="file-upload-info">* Upload file dengan format jpg, png, jpeg maksimal 2 MB</p>
+                <h1 class="section-title-tengah">Detail Pengajuan Surat Rekomendasi Mahasiswa</h1>
+                <?php
+                $formattedDate = date('d F Y', strtotime($TanyaFT['tanggal_pengajuan']));
+                ?>
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">ID Pengajuan</h2>
+                        <p class="application-date-value"> <?= esc($TanyaFT['id_tanyaft']) ?></p>
                     </section>
-                    <section class="buttons-container">
-                        <button type="button" class="button-cancel" tabindex="0">Batal</button>
-                        <button type="submit" class="button-submit" tabindex="0">Kirim</button>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Status Pengajuan</h2>
+                        <section class="approval-container">
+                            <p class="approval-status-detail">Disetujui</p>
+                        </section>
                     </section>
+                </div>
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Tanggal Pengajuan</h2>
+                        <p class="application-date-value"><?= $formattedDate ?></p>
+
+                    </section>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Nama Lengkap</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['nama_lengkap']) ?></p>
+                    </section>
+                </div>
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">NIM</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['nim']) ?></p>
+                    </section>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">Program Studi</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['prodi']) ?></p>
+                    </section>
+                </div>
+                <div class="row-detail-tanya-ft">
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">No. Handphone</h2>
+                        <p class="application-date-value"><?= esc($TanyaFT['no_handphone']) ?></p>
+                    </section>
+                    <section class="container-detail-tanya-ft">
+                        <h2 class="application-date-label">File Pendukung</h2>
+                        <p class="application-date-value"> <a
+                                href="<?= base_url('upload/image/' . esc($TanyaFT['file_berkas'])) ?>" target="_blank">
+                                Lihat Gambar
+                            </a></p>
+                    </section>
+                </div>
+                <form class="name-input-container">
+                    <label class="name-label-wrapper" for="fullName">
+                        <span class="name-label">Pertanyaan</span>
+                    </label>
+                    <p class="application-date-value"><?= esc($TanyaFT['pertanyaan']) ?></p>
                 </form>
-
-                <script>
-                    function confirmSubmit() {
-                        if (confirm("Anda yakin ingin mengirimkan data?")) {
-                            return true; // Lanjutkan pengiriman form
-                        } else {
-                            return false; // Batalkan pengiriman form
-                        }
-                    }
-                </script>
-
-
             </div>
-
         </main>
     </div>
 </body>

@@ -1,37 +1,41 @@
 <html>
 
 <head>
-<link href="<?= base_url('css/stylefix.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('css/stylefix.css') ?>" rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
         <div class="logo-container">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1107e6ae3e0c4ffc75a966ee66cb08b8c2211ec669962e10fe7c3aa7d7a9c2ff?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&" alt="University Logo" class="logo">
-          <div class="logo-text">
-            <span class="university-name">Fakultas Teknik</span>
-            <span class="faculty-name">Universitas Lambung Mangkurat</span>
-          </div>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1107e6ae3e0c4ffc75a966ee66cb08b8c2211ec669962e10fe7c3aa7d7a9c2ff?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                alt="University Logo" class="logo">
+            <div class="logo-text">
+                <span class="university-name">Fakultas Teknik</span>
+                <span class="faculty-name">Universitas Lambung Mangkurat</span>
+            </div>
         </div>
         <div class="search-bar">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/413e5cc496fa41cde703fccff3798ef6d2b9e7d8ba3cf4d88385979ad6375060?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&" alt="Search Icon" class="search-icon">
-          <span>Cari Layanan...</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/413e5cc496fa41cde703fccff3798ef6d2b9e7d8ba3cf4d88385979ad6375060?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                alt="Search Icon" class="search-icon">
+            <span>Cari Layanan...</span>
         </div>
         <div class="user-info">
-          <div class="notification-icon">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/25771309cdb260988e61996623d886458102f7e2ab6fed10a0fa21be1c7f4a0a?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&" alt="Notification Icon" class="menu-icon">
-          </div>
-          <div class="user-profile">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/853bbc0819994faa9a2050eb7ed7e58b892a6642457e2d21275bcb5e0a032bc5?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&" alt="User Avatar" class="user-avatar">
-            <span>Maulana</span>
-          </div>
+            <div class="notification-icon">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/25771309cdb260988e61996623d886458102f7e2ab6fed10a0fa21be1c7f4a0a?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                    alt="Notification Icon" class="menu-icon">
+            </div>
+            <div class="user-profile">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/853bbc0819994faa9a2050eb7ed7e58b892a6642457e2d21275bcb5e0a032bc5?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                    alt="User Avatar" class="user-avatar">
+                <span> <?= session()->get('nama') ?></span>
+            </div>
         </div>
-      </header>
+    </header>
     <div class="flex-container">
         <aside>
             <nav class="sidebar-content">
                 <h2 class="menu-header">Menu</h2>
-                <a href="#" class="menu-item menu-item-active">
+                <a href="<?= base_url('dashboard') ?>" class="menu-item menu-item-active">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/23004516897fd89185417a24df5acd2efde7ada021f51aab905ec7013a0973b6?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">Dashboard</span>
@@ -78,7 +82,7 @@
                         alt="" class="menu-icon" />
                     <span class="menu-text">Profile</span>
                 </a>
-                <a href="#" class="menu-item">
+                <a href="<?= base_url('login') ?>" class="menu-item">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9cb424fbc848abd359c1a5e087aa8b264a3f19718a8ba4e083fb1568891b35df?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="" class="menu-icon" />
                     <span class="menu-text">Logout</span>
@@ -98,25 +102,29 @@
                     </div>
                 </div>
                 <div class="services-grid">
-                  <div class="services-row">
-                    <article class="service-card">
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9b538ee6f63c8c2d56796702ee6bdda03036dcbdb2f8bc977e0455144c634fa?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&" alt="Surat Keterangan Lulus" class="service-image" />
-                      <div class="service-content">
-                        <h4 class="service-title">Lapor FT</h4>
-                        <p class="service-description">Layanan ini digunakan untuk menyampaikan keluhan atau saran di lingkungan Fakultas Teknik Universitas Lambung Mangkurat.</p>
-                      </div>
-                    </article>
-                    <article class="service-card">
-                    <a href="<?= base_url('tanyaft') ?>">
+                    <div class="services-row-response">
+                        <article class="service-card">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ddfd254d57eb30b3ad686b9fcab596504a89ca588c31efa426f18c3483c8181?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                                alt="Surat Keterangan Lulus" class="service-image" />
+                            <div class="service-content">
+                                <h4 class="service-title">Lapor FT</h4>
+                                <p class="service-description">Layanan ini digunakan untuk menyampaikan keluhan atau
+                                    saran di lingkungan Fakultas Teknik Universitas Lambung Mangkurat.</p>
+                            </div>
+                        </article>
+                        <article class="service-card">
+                            <a href="<?= base_url('tanyaft') ?>">
 
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/600fe76bbb60eafbe0d67bf36506ff736561a5a6e21f461b3fca91d180a343ff?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&" alt="Surat Pengantar Izin PKL" class="service-image" />
-                        <div class="service-content">
-                            <h4 class="service-title">Tanya FT</h4>
-                            <p class="service-description">Layanan ini disediakan untuk menyampaikan permohonana informasi publik terkait Fakultas Teknik ULM</p>
-                        </div>
-                    </a>
-                    </article>
-                  </div>
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7cdba200b51831ae0de8af7a66abcdff56dfc8ea218296257d55c4a0d1308692?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                                    alt="Tanya FT Service" class="service-image">
+                                <div class="service-content">
+                                    <h4 class="service-title">Tanya FT</h4>
+                                    <p class="service-description">Layanan ini disediakan untuk menyampaikan permohonana
+                                        informasi publik terkait Fakultas Teknik ULM</p>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
                 </div>
             </div>
 

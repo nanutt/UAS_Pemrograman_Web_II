@@ -6,6 +6,10 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+ //auth
+ $routes->post('/login/auth', 'Login::auth');
+ $routes->post('/register/save', 'Register::save');
+
  //login
  $routes->get('login', 'Login::index');
  $routes->get('register', 'Register::index');
