@@ -1,47 +1,35 @@
-<?php namespace App\Controllers;
- 
+<?php
+
+namespace App\Controllers;
+
 use CodeIgniter\Controller;
 use App\Models\AkunModel;
- 
+
 class Register extends Controller
 {
     public function index()
     {
-        //include helper form
         helper(['form']);
-        $data = [];
-        echo view('registerft', $data);
+        echo view('registerft');
     }
- 
+
     public function save()
     {
-        //set rules validation form
-        // $rules = [
-        //     'nama'          => 'required|min_length[3]|max_length[50]',
-        //     'no_hanphone'   => 'required|min_length[10]|max_length[15]|numeric',
-        //     'email'         => 'required|valid_email|min_length[6]|max_length[50]|is_unique[akun.email]',
-        //     'masuk_sebagai' => 'required',
-        //     'password'      => 'required|min_length[6]|max_length[200]',
-        //     'confpassword'  => 'matches[password]'
-        // ];
-        
-         
+        helper(['form']);
         $model = new AkunModel();
-        $data = [
-            'nama'          => $this->request->getVar('nama'),
-            'no_hanphone'   => $this->request->getVar('no_hanphone'),
-            'email'         => $this->request->getVar('email'),
-            'masuk_sebagai' => $this->request->getVar('masuk_sebagai'),
-            'user_password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
-        ];
         
+        $data = [
+            'nama'          => $this->request->getPost('nama'),
+            'no_hanphone'   => $this->request->getPost('no_hanphone'),
+            'email'         => $this->request->getPost('email'),
+            'masuk_sebagai' => $this->request->getPost('masuk_sebagai'),
+            'password'      => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
+        ];
+
         if ($model->save($data)) {
             return redirect()->to('/login');
         } else {
-            $data['validation'] = $this->validator;
-            echo view('registerft', $data);
+            return redirect()->back()->withInput()->with('errors', $model->errors());
         }
-         
     }
- 
 }
