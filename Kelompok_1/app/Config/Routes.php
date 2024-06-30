@@ -9,7 +9,7 @@ $routes->get('login', 'Login::index');
 $routes->post('login/auth', 'Login::auth');
 $routes->get('logout', 'Login::logout');
 //Register
-$routes->get('register', 'Register::index');
+$routes->get('/', 'Register::index');
 $routes->post('register/save', 'Register::save');
 //Layanan FT
 $routes->group('layananft', ['filter' => 'auth'], function ($routes) {
@@ -21,7 +21,4 @@ $routes->group('layananft', ['filter' => 'auth'], function ($routes) {
     $routes->get('(:segment)/preview', 'Views::preview/$1');
     $routes->post('datapengajuan/save', 'Views::save');
 });
-
-
-
 ?>

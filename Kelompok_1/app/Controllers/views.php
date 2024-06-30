@@ -73,7 +73,7 @@ class views extends Controller
         ]);
         $session->setFlashdata('msg', 'Data Berhasil Ditambahkan');
 
-        return redirect('tanyaft');
+        return redirect('layananft/tanyaft');
     }
     public function create()
     {

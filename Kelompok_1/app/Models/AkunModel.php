@@ -15,4 +15,3 @@ class AkunModel extends Model
             ->get()->getRowArray();
     }
 }
-?>
