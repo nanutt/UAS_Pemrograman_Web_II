@@ -14,9 +14,7 @@
             });
         });
     </script>
-
 </head>
-
 <body>
     <header class="header">
         <div class="logo-container">
@@ -144,9 +142,6 @@
                         </button>
                     </div>
                 </a>
-
-
-
                 <section class="table__body">
                     <table>
                         <thead class="thead-dark">
@@ -163,7 +158,6 @@
                         <tbody>
                             <?php $nomor = 1; ?>
                             <?php
-                            // Ambil data dari database (contoh CodeIgniter)
                             foreach ($pengajuan as $row) {
                                 $formattedDate = date('d F Y', strtotime($row['tanggal_pengajuan']));
                             }
@@ -193,10 +187,7 @@
 
                                                 </button>
                                             </a>
-
-                                            <a href="<?= base_url('layananft/' .$row['id_tanyaft'] . '/tanggapan') ?>">
-
-
+                                            <a href="<?= base_url('layananft/'. $row['id_tanyaft'] . '/tanggapan') ?>">
                                                 <button class="action-button action-button-download">
                                                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/14d8c0daa13f96f007c96240439e6c60f549c14d23ad3c4e4ce387de8c0579ba?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                                                         alt="" class="action-icon" />
@@ -205,7 +196,6 @@
 
                                                 </button>
                                             </a>
-
                                         </nav>
                                     </td>
                                 </tr>

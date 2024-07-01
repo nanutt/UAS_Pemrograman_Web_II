@@ -93,7 +93,7 @@
             <div class="content">
                 <div class="dashboard-header">
                     <div class="dashboard-icon">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/38d7d61c4c53b54ffd62628902a19dd42f50dd17f912b65bc9414110d133452a?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/648df4fa0288ff5086d4a9ee764222c675f9cda234c929a8a81e3daa3f41c404?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                             alt="Dashboard Icon" class="dashboard-icon-img" />
                     </div>
                     <div class="dashboard-title">

@@ -32,9 +32,9 @@ class views extends Controller
 
     public function tanya_ft()
     {
-        $tanyaFModel = new TanyaFTModel(); // Assuming TanyaF is your model for submissions
-        $data['pengajuan'] = $tanyaFModel->findAll(); // Fetch all submissions
-        echo view('tanya-ft', $data); // Pass the data to the view 'tanya-ft.php'
+        $tanyaFModel = new TanyaFTModel(); 
+        $data['pengajuan'] = $tanyaFModel->findAll(); 
+        echo view('tanya-ft', $data); 
     }
 
 

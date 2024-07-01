@@ -99,8 +99,8 @@
                 </a>
                 <div class="divider"></div>
                 <h1 class="section-title-tengah">Tambah Pengajuan Tanya FT</h1>
-                <form action="<?= site_url('layananft/datapengajuan/save') ?>" method="post" enctype="multipart/form-data"
-                    onsubmit="return confirmSubmit()">
+                <form action="<?= site_url('layananft/datapengajuan/save') ?>" method="post"
+                    enctype="multipart/form-data" onsubmit="return confirmSubmit()">
                     <div class="name-input-container">
                         <label class="name-label-wrapper" for="nama_lengkap">
                             <span class="name-label">Nama Lengkap</span>
@@ -138,36 +138,36 @@
                         </label>
                         <input type="text" id="pertanyaan" name="pertanyaan" class="name-input" aria-required="true">
                     </div>
+                    <h2 class="file-upload-title">Berkas Pendukung</h2>
                     <section class="file-upload-container">
-                        <h2 class="file-upload-title">Berkas Pendukung</h2>
-                        <div class="file-upload-area">
-                            <label for="file-upload" class="visually-hidden">Choose file</label>
-                            <input type="file" id="file-upload" aria-label="File upload" name="file_berkas">
-                            <p class="file-upload-text">Drag and drop a file here or click</p>
-                        </div>
-                        <p class="file-upload-info">* Upload file dengan format jpg, png, jpeg maksimal 2 MB</p>
+                        <button type="button" for="fileInput" class="file-upload-button">Choose file</button>
+                        <input class="file-upload-button" style="display: none" type="file" id="fileInput"
+                            name="file_berkas">
+                        <p class="file-upload-text">Drag and drop a file here or click</p>
+
+                        <script>
+                            document.querySelector('.file-upload-button').addEventListener('click', function () {
+                                document.getElementById('fileInput').click();
+                            });
+                        </script>
                     </section>
+                    <p class="file-upload-info">* Upload file dengan format jpg, png, jpeg maksimal 2 MB</p>
                     <section class="buttons-container">
                         <button type="button" class="button-cancel" tabindex="0">Batal</button>
                         <button type="submit" class="button-submit" tabindex="0">Kirim</button>
+                        <script>
+                            function confirmSubmit() {
+                                if (confirm("Anda yakin ingin mengirimkan data?")) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        </script>
                     </section>
                 </form>
-
-                <script>
-                    function confirmSubmit() {
-                        if (confirm("Anda yakin ingin mengirimkan data?")) {
-                            return true; 
-                        } else {
-                            return false; 
-                        }
-                    }
-                </script>
-
-
             </div>
-
         </main>
     </div>
 </body>
-
 </html>

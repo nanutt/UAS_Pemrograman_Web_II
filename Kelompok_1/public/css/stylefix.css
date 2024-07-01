@@ -125,7 +125,6 @@ main {
   display: flex;
   width: 80px;
   height: 80px;
-  padding: 0 20px;
 }
 
 .dashboard-icon-img {
@@ -351,7 +350,7 @@ main {
 /* YANG AKANNNNNNNNNNNNNNNN ANDAAAAAAAAAAAAAAAAAAAAAAAAA BUTUHHHHHHHHHHHHHHHHHHHHHHHHHHHKANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN */
 .services-title {
   color: #94a3b8;
-  text-align: center;
+  text-align: left;
   margin-top: 32px;
   font: 400 16px Poppins, sans-serif;
 }
@@ -359,19 +358,53 @@ main {
 .services-grid {
   margin-top: 16px;
 }
+.file-upload-container {
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid rgba(226, 232, 240, 1);
+  background-color: #fff;
+  display: flex;
+  gap: 16px;
+  font: 400 14px Poppins, sans-serif;
+}
 
+.file-upload-button {
+  border-radius: 8px 0 0 8px;
+  background-color: #0ea5e9;
+  color: #fff;
+  text-align: right;
+  padding: 16px 24px;
+}
+
+.file-upload-text {
+  color: #cbd5e1;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .file-upload-container {
+    flex-wrap: wrap;
+  }
+  
+  .file-upload-button {
+    padding: 16px 20px;
+  }
+  
+  .file-upload-text {
+    max-width: 100%;
+  }
+}
 
 .services-row {
+  margin-top: 24px;
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
 }
 .services-row-response {
   position: relative;
   display: flex;
   gap: 24px;
-  padding: 10px;
 }
 
 
@@ -439,6 +472,7 @@ main {
 }
 
 .logo-container {
+  width: 290px;
   position: relative;
   align-items: center;
   display: flex;
@@ -747,10 +781,11 @@ thead th {
 .file-upload-container {
   align-self: stretch;
   display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .file-upload-title {
+  margin-top: 32px;
   color: #1e293b;
   width: 100%;
   font: 600 16px Poppins, sans-serif;

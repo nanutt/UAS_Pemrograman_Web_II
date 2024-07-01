@@ -57,7 +57,7 @@
             <div class="signup-section">
               <div class="signup-text">
                 <p class="signup-question">Belum Mempunyai Akun?</p>
-                <a href="<?= base_url('register') ?>" class="signup-link">Daftar</a>
+                <a href="<?= base_url('/') ?>" class="signup-link">Daftar</a>
               </div>
             </div>
           </main>

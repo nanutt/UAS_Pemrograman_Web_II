@@ -10,9 +10,7 @@ class TanyaFTModel extends Model
     protected $useAutoIncrement = true;
     protected $allowedFields = ['nama_lengkap', 'nim', 'prodi', 'no_handphone', 'pertanyaan', 'tanggal_pengajuan', 'file_berkas'];
 
-    //validation
     protected $validationRules = [
-
     ];
 }
 ?>

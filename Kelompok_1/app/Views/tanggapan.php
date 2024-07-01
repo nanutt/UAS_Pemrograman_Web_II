@@ -92,7 +92,7 @@
         </aside>
         <main>
             <div class="content">
-                <a href="<?= base_url('layananft/tanyaft')?>" class="back-button">
+                <a href="<?= base_url('layananft/tanyaft') ?>" class="back-button">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56b0e97e03d1a545d2a516906aa5a04969cc559ff326afef2943428b84cd6f2d?apiKey=e72ded3b641e48ceb0e36e65e1fc6345&"
                         alt="Back Arrow" class="menu-icon">
                     <span>Kembali</span>
@@ -104,7 +104,7 @@
                     <span class="question-colon">:</span>
                     <div class="question-content">
                         <p class="question-text">
-                            Apa saja keuntungan layanan FT ULM yang baru dibuat ini?
+                            <?= esc($TanyaFT['pertanyaan']) ?>
                         </p>
                         <button class="check-file-button" tabindex="0">
                             Cek File
@@ -116,15 +116,15 @@
                     <span class="question-colon">:</span>
                     <div class="question-content">
                         <p class="question-text">
-                        Website layanan baru FT ULM dirancang untuk memberikan akses yang mudah dan cepat bagi mahasiswa, dosen, dan staf untuk mengakses berbagai layanan akademik dan administratif. Dengan antarmuka yang responsif dan ramah pengguna, pengguna dapat dengan mudah mengajukan permohonan, mengakses informasi akademik, memantau status pengajuan, dan berinteraksi dengan berbagai fitur lainnya secara efisien.
+                            Website layanan baru FT ULM dirancang untuk memberikan akses yang mudah dan cepat bagi
+                            mahasiswa, dosen, dan staf untuk mengakses berbagai layanan akademik dan administratif.
+                            Dengan antarmuka yang responsif dan ramah pengguna, pengguna dapat dengan mudah mengajukan
+                            permohonan, mengakses informasi akademik, memantau status pengajuan, dan berinteraksi dengan
+                            berbagai fitur lainnya secara efisien.
                         </p>
                     </div>
                 </section>
-
-
-
             </div>
-
         </main>
     </div>
 </body>
